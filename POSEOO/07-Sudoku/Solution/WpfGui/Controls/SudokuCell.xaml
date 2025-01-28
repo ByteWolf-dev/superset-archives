@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="Sudoku.Controls.SudokuCell"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Sudoku"
+             mc:Ignorable="d"
+             x:Name="me"
+             d:DesignHeight="100" d:DesignWidth="100"
+             BorderBrush="Black">
+    <UserControl.Resources>
+        <Style x:Key="CellButtonStyle" TargetType="Button">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Value.HasNo, ElementName=me}" Value="true">
+                    <Setter Property="Background" Value="DarkGray"></Setter>
+                    <Setter Property="FontWeight" Value="Bold"></Setter>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Value.AreManyPossible, ElementName=me}" Value="true">
+                    <Setter Property="FontWeight" Value="Thin"></Setter>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Value.IsOnePossible, ElementName=me}" Value="true">
+                    <Setter Property="Background" Value="LightSteelBlue"></Setter>
+                    <Setter Property="FontWeight" Value="Thin"></Setter>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Button Content="{Binding Path=Value.Text, ElementName=me}"
+                Command="{Binding Path=Command , ElementName=me}"
+                CommandParameter="{Binding Path=CommandParameter , ElementName=me}"
+                ToolTip="{Binding Path=Value.NotPossibleExplanationText, ElementName=me}"
+                Style="{StaticResource CellButtonStyle}">
+        </Button>
+    </Grid>
+</UserControl>

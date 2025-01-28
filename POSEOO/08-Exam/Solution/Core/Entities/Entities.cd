@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Core.Entities.Exam">
+    <Position X="4.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAQAAAAAAABBAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Exam.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="ExamQuestions" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Core.Entities.Examinee">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Examinee.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Entities.ExamineeExamQuestion">
+    <Position X="6.5" Y="2.75" Width="1.75" />
+    <AssociationLine Name="ExamQuestion" Type="Core.Entities.ExamQuestion" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.25" Y="3.094" />
+        <Point X="9.688" Y="3.094" />
+        <Point X="9.688" Y="2.56" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAgACAAAAAAAAAAAAAAAIAABAAAAAAAiAAAA=</HashCode>
+      <FileName>Entities\ExamineeExamQuestion.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Examinee" />
+      <Property Name="ExamQuestion" />
+      <Property Name="Exam" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Core.Entities.ExamQuestion">
+    <Position X="9" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAggAAAAEAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Entities\ExamQuestion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

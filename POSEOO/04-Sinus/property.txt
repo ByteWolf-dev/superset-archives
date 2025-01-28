@@ -1,0 +1,11 @@
+    public static DependencyProperty ScaleXProperty = DependencyProperty.Register(nameof(ScaleX), typeof(double), typeof(SinusControl), new PropertyMetadata(10.0, OnScaleXChanged));
+    public double ScaleX
+    {
+        get => (double)GetValue(ScaleXProperty);
+        set => SetValue(ScaleXProperty, value);
+    }
+    private static void OnScaleXChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs e)
+    {
+        var ctrl = (SinusControl)dependencyObject;
+        ctrl.InvalidateVisual();
+    }
